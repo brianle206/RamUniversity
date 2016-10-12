@@ -1,9 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :find_article, only: [:show,:edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show, :landing, :search]
-	# before_action :find_lecture, only: [:show, :add_lecture]
-	# before_action :this_lecture, only: [:lecture_show, :lecture_edit, :lecture_update]
-	# before_action :find_status, only: [:lecture_show]
+
 	include MarkdownHelper 
 	include DashboardHelper
 	def landing
@@ -16,39 +14,6 @@ class ArticlesController < ApplicationController
 			@article = Article.where(category_id: @category_id).order("created_at DESC")
 		end
 	end
-
-	# def add_lecture
-	# 	@lecture = Lecture.new
-	# end
-
-	# def create_lecture
-	# 	@article = Learn.find(params[:id])
-	# 	@lecture = @article.lectures.build(lecture_params)
-	# 	@lecture.save
-	# 	redirect_to @article
-	# end
-
-	# def lecture_show
-	# 	@lecture = Lecture.where(id: params[:lid])
-	# 	render 'lecture_show'
-	# end
-
-	# def lecture_edit
-		
-	# end
-
-	# def lecture_update
-	# 	@lecture.update(lecture_params)
-	# 	redirect_to @lecture
-	# end
-
-	# def lecture_destroy
-	# 	@lecture = Lecture.find(params[:lid])
-	# 	if @lecture.present? 
-	# 		@lecture.destroy
-	# 	end
-	# 	redirect_to root_path
-	# end
 
 	def show
 	end

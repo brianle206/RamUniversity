@@ -1,5 +1,16 @@
 %h1 Welcome to RAM University Admin Dashboard
+%ul.nav.navbar-nav.navbar-left
+	%li= link_to "Home", root_path, class: "list-group-item"
+	-Category.all.each do |category|
+		%li=link_to category.name, admin_index_path(category: category.name), class: "list-group-item"
+	%li= link_to "New Article", new_article_path, class: "btn btn-primary"
 
+-if current_user.try(:admin?)
+	%li= link_to("Manage", "/admin/manage", class: "btn btn-warning") 
+
+	%li= link_to "Create Learning Module", learn_index_path, class: "btn btn-primary"
+
+	%li= link_to "Make Quiz", quiz_index_path, class: "btn btn-primary"
 %table.table.table-bordered
 	%thead
 		%tr
