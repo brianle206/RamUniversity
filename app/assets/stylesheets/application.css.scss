@@ -23,8 +23,12 @@ ul{
 	list-style: none;
 }
 .bgWhite{
-	background-image: url("https://as1.ftcdn.net/jpg/00/49/94/54/500_F_49945457_cyfd9FuYvyCO8v1QOzAFHApZRtCLTDaw.jpg");
-    background-size: cover;
+	background-color: white;
+    opacity: .9;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+
 }
 .footer{
 	position:fixed;
@@ -39,7 +43,8 @@ ul{
 body{
 	padding-top: 70px;
 	padding-bottom: 70px;
-	#background: #afeeee;
+	background-image: url("https://wallpaperscraft.com/image/university_of_cambridge_cambridge_uk_98174_2560x1600.jpg");
+	background-size: cover;
 }
 .black{
 	color: black;

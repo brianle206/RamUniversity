@@ -9,7 +9,12 @@
       	<hr>
         <div class="col-sm-7">
           <h4 class='grey'>
-            <%= "#{learn.title} #{@complete}/#{@number_of_lectures}"  %>
+            <%= "#{learn.title}"  %>
+              <% learn.lectures.each do |lecture| %>
+                <% lecture.completes.each do |complete| %>
+                <li><% if complete.learn_id == learn.id && complete.user_id == current_user.id && lecture.id == complete.lecture_id %> <%= lecture.title %> <span class='glyphicon glyphicon-ok'></span> <% else %> <% lecture.title %><% end %></li>
+                <% end %> 
+              <% end %>
           </h4>
         </div>
         <div class="col-sm-5 text-center">

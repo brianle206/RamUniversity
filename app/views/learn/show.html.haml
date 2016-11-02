@@ -7,7 +7,7 @@
 		.btn.btn-default= link_to "Add Course", "/add/course/#{@section.id}"
 
 
--if current_user && !current_user.try(:admin?)
+-if current_user && !current_user.try(:admin?) 
 	
 	- @lectures.each do |l|
 		=render partial: 'learn/lecture_show', locals: {:lecture => l}

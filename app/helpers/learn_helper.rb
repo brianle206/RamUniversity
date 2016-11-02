@@ -12,4 +12,5 @@ module LearnHelper
 	    @lecture = Lecture.find(params)
 	    @status = Complete.where(user_id: current_user.id, lecture_id: @lecture.id)
   	end
+  	
 end

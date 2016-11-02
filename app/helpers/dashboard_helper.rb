@@ -26,4 +26,8 @@ module DashboardHelper
 	def find_quiz_title(quiz)
 		@quiz_title = Quiz.find(quiz).title
 	end
+	def lecture_name(id)
+		@lecture = Lecture.find(id)
+		@title = @lecture.title
+	end
 end
